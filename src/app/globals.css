@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* base surface - Soft Cream & Warm Sand Palette */
+  --color-cream: #FDFBF7;
+  --color-cream-soft: #F5EFE6;
+  --color-ink: #2C2825;
+  --color-ink-soft: #635E59;
+  --color-muted: #96908A;
+  --color-card: #ffffff;
+  --color-border: #EEE6D9;
+
+  /* Rose-Burgundy Accent (#985f6b) */
+  --color-plum: #985f6b;
+  --color-plum-dark: #824d58;
+  --color-plum-soft: #F9EFF1;
+
+  /* Heading and subheading word accents */
+  --color-accent-rose-1: #E48FA1;
+  --color-accent-rose-2: #CB7F8F;
+  --color-accent-rose-3: #B16F7D;
+  --color-accent-rose-4: #985F6B;
+
+  --color-terracotta: #985f6b;
+  --color-terracotta-dark: #824d58;
+  --color-gold: #D4A373;
+  --color-gold-soft: #F3E5D8;
+
+  --font-heading: var(--font-cormorant), Georgia, serif;
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-jakarta), sans-serif;
+}
+
+body {
+  background-color: #FDFBF7;
+  color: #2C2825;
+  font-family: var(--font-jakarta), sans-serif;
+}
+
+.font-heading,
+.font-serif {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.font-sans {
+  font-family: var(--font-jakarta), sans-serif;
+}
