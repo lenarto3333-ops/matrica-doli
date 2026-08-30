@@ -27,7 +27,7 @@ export default function PricingCards({ dict }: Props) {
             <span className="font-heading font-extrabold text-3xl">{plan.price} грн</span>
             <span className="text-sm text-ink-soft/60 line-through">{plan.oldPrice} грн</span>
           </div>
-          <ul className="space-y-3 text-sm text-ink-soft mb-7 flex-1">
+          <ul className="space-y-3 text-sm sm:text-base text-ink-soft mb-7 flex-1">
             {plan.features.map((f) => (
               <li key={f} className="flex gap-2.5">
                 <span className="text-plum mt-0.5">✓</span>

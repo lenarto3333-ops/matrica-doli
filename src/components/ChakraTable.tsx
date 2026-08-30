@@ -94,7 +94,7 @@ export default function ChakraTableView({
                     {row.emotions}
                   </td>
                   <td
-                    className="px-5 py-3.5 text-xs italic leading-relaxed max-w-sm"
+                    className="px-5 py-3.5 text-sm italic leading-relaxed max-w-sm"
                     style={{ color: c.subtext }}
                   >
                     {health?.areas}
@@ -136,7 +136,7 @@ export default function ChakraTableView({
                 {table.total.emotions}
               </td>
               <td
-                className="px-5 py-4 text-xs italic leading-relaxed max-w-sm"
+                className="px-5 py-4 text-sm italic leading-relaxed max-w-sm"
                 style={{ color: totalColors.subtext }}
               >
                 {totalRow.health}
@@ -146,7 +146,7 @@ export default function ChakraTableView({
         </table>
       </div>
       {disclaimer && (
-        <div className="border-t border-[#E8D8CD] bg-[#FFF8F5] px-5 py-4 text-xs leading-relaxed text-[#635E59]">
+        <div className="border-t border-[#E8D8CD] bg-[#FFF8F5] px-5 py-4 text-sm leading-relaxed text-[#635E59]">
           {disclaimer}
         </div>
       )}

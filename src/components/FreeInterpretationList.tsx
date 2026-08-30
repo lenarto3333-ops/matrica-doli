@@ -17,7 +17,7 @@ interface FreeInterpretationListProps {
 }
 
 const proseClass =
-  "prose prose-sm sm:prose-base max-w-none text-ink-soft prose-headings:font-heading prose-headings:text-ink prose-strong:text-ink";
+  "prose prose-base sm:prose-lg max-w-none text-ink-soft prose-headings:font-heading prose-headings:text-ink prose-strong:text-ink";
 
 function isPlusHeading(heading: string) {
   return /плюс|позитив|positive/i.test(heading);

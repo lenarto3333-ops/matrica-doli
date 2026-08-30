@@ -108,6 +108,8 @@ const en: Dictionary = {
     title: "Calculate your Matrix of Destiny online",
     titleAccent: "with a full breakdown",
     subtitle: "Enter your birth date and get a free personal calculation.",
+    kicker: ["SELF-KNOWLEDGE", "CLARITY", "DIRECTION"],
+    features: ["Precise calculation", "Personal interpretation", "Clear recommendations"],
   },
   tabs: [
     "Matrix of Destiny",
@@ -115,6 +117,8 @@ const en: Dictionary = {
     "Year Forecast",
   ],
   form: {
+    heading: "Enter your birth date",
+    todayTooltip: "Set the date to today",
     gender: "Sex",
     man: "Male",
     woman: "Female",
@@ -401,6 +405,54 @@ const en: Dictionary = {
     notFoundTitle: "Date not recognized",
     notFoundBody: "Please go back to the homepage and enter your birth date again.",
     backHome: "Back home",
+  },
+  method: {
+    badge: "About the method",
+    heading: "22 archetypes that already live in your birth date",
+    paragraphs: [
+      "The Matrix of Destiny is a synthesis of numerology and practical psychology. Every birth date is made up of 22 archetypal energies, and each person expresses them differently: as a strength, or as a 'block' that gets in the way of moving forward.",
+      "Unlike general horoscopes, the calculation is built purely on your birth date and gives an accurate, personal picture: your talents, comfort zone, financial potential, and the karmic tasks worth working through.",
+    ],
+  },
+  reviews: {
+    badge: "Reviews",
+    heading: "What people say after their reading",
+    items: [
+      {
+        name: "Olena K.",
+        text: "The part about financial blocks impressed me the most — it described my situation very accurately.",
+      },
+      {
+        name: "Dmytro P.",
+        text: "Did the reading together with my wife — a lot became clear about our relationship.",
+      },
+      {
+        name: "Maryna V.",
+        text: "Simple, clear, no unnecessary mysticism. I got concrete steps for what to do next.",
+      },
+    ],
+  },
+  faq: {
+    badge: "FAQ",
+    heading: "Frequently asked questions",
+    items: [
+      {
+        q: "How accurate is the calculation?",
+        a: "The calculation is based purely on your birth date and follows a fixed mathematical algorithm, so the result is always the same for a given date.",
+      },
+      {
+        q: "Do I need to register?",
+        a: "No. Enter your birth date and instantly get the free part of the reading, no account needed.",
+      },
+      {
+        q: "What do I get after paying?",
+        a: "The full reading opens right on the site, and you'll be able to download the PDF report or get it by email.",
+      },
+      {
+        q: "Can I calculate a matrix for a child or a couple?",
+        a: "Yes, some plans include a Compatibility Matrix for couples and a Children's Matrix.",
+      },
+    ],
   },
 };
 

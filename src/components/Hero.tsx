@@ -18,11 +18,12 @@ export default function Hero({ dict, locale }: HeroProps) {
           {/* Left Column Content */}
           <div className="lg:col-span-7 text-left">
             <div className="inline-flex items-center gap-2 text-[#985f6b] tracking-[0.25em] uppercase text-xs font-semibold mb-6">
-              <span>ПІЗНАННЯ СЕБЕ</span>
-              <span>•</span>
-              <span>ЯСНІСТЬ</span>
-              <span>•</span>
-              <span>НАПРЯМОК</span>
+              {dict.hero.kicker.map((word, i) => (
+                <span key={word} className="inline-flex items-center gap-2">
+                  {i > 0 && <span>•</span>}
+                  <span>{word}</span>
+                </span>
+              ))}
             </div>
 
             <h1 className="font-serif text-4xl sm:text-6xl text-[#2C2825] font-normal leading-[1.12] mb-6">
@@ -50,7 +51,7 @@ export default function Hero({ dict, locale }: HeroProps) {
                 <circle cx="12" cy="12" r="2" fill="currentColor" opacity="0.3" />
               </svg>
             </div>
-            <span className="font-semibold text-sm sm:text-base text-[#2C2825]">Точний розрахунок</span>
+            <span className="font-semibold text-sm sm:text-base text-[#2C2825]">{dict.hero.features[0]}</span>
           </div>
 
           <div className="flex items-center justify-center gap-3.5 bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-5 border border-[#EEE6D9] shadow-sm text-center hover:shadow-md transition-shadow">
@@ -60,7 +61,7 @@ export default function Hero({ dict, locale }: HeroProps) {
                 <circle cx="12" cy="7" r="4" />
               </svg>
             </div>
-            <span className="font-semibold text-sm sm:text-base text-[#2C2825]">Персональне трактування</span>
+            <span className="font-semibold text-sm sm:text-base text-[#2C2825]">{dict.hero.features[1]}</span>
           </div>
 
           <div className="flex items-center justify-center gap-3.5 bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-5 border border-[#EEE6D9] shadow-sm text-center hover:shadow-md transition-shadow">
@@ -69,7 +70,7 @@ export default function Hero({ dict, locale }: HeroProps) {
                 <path d="M9 18h6m-5 3h4M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z" />
               </svg>
             </div>
-            <span className="font-semibold text-sm sm:text-base text-[#2C2825]">Зрозумілі рекомендації</span>
+            <span className="font-semibold text-sm sm:text-base text-[#2C2825]">{dict.hero.features[2]}</span>
           </div>
         </div>
       </div>

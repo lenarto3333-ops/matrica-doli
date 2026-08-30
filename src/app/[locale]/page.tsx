@@ -42,7 +42,7 @@ export default async function Home({ params }: HomeProps) {
       <Header dict={dict} locale={locale} />
       <main>
         <Hero dict={dict} locale={locale} />
-        <MethodSection />
+        <MethodSection dict={dict} />
         <WhatMatrixTellsSection dict={dict} />
         <UniquePersonSection dict={dict} />
         <EnergiesSection dict={dict} />
@@ -50,8 +50,8 @@ export default async function Home({ params }: HomeProps) {
         <LearnSection dict={dict} />
         <FreeCalculateSection dict={dict} />
         <PricingSection dict={dict} />
-        <ReviewsSection />
-        <FaqSection />
+        <ReviewsSection dict={dict} />
+        <FaqSection dict={dict} />
         <PromoBlocks dict={dict} />
         <FinalCtaSection dict={dict} />
       </main>

@@ -116,9 +116,13 @@ export interface Dictionary {
     title: string;
     titleAccent: string;
     subtitle: string;
+    kicker: string[];
+    features: string[];
   };
   tabs: string[];
   form: {
+    heading: string;
+    todayTooltip: string;
     gender: string;
     man: string;
     woman: string;
@@ -132,6 +136,21 @@ export interface Dictionary {
     comingSoonNote: string;
     backToMatrix: string;
     dateError: string;
+  };
+  method: {
+    badge: string;
+    heading: string;
+    paragraphs: string[];
+  };
+  reviews: {
+    badge: string;
+    heading: string;
+    items: { name: string; text: string }[];
+  };
+  faq: {
+    badge: string;
+    heading: string;
+    items: { q: string; a: string }[];
   };
   whatMatrix: {
     heading: string;

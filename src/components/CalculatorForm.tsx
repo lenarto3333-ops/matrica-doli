@@ -64,13 +64,13 @@ export default function CalculatorForm({ dict, locale, className = "" }: Calcula
     <div className={`rounded-2xl sm:rounded-[28px] bg-white border border-[#EEE6D9] shadow-xl shadow-[#985f6b]/10 p-7 sm:p-9 text-left ${className}`}>
       <div className="flex items-center justify-between gap-2 mb-6">
         <h2 className="font-sans font-bold text-xl text-[#2C2825]">
-          Введіть дату народження
+          {dict.form.heading}
         </h2>
         <button
           type="button"
           onClick={setToToday}
           className="inline-flex items-center gap-1.5 rounded-lg border border-[#EEE6D9] bg-[#FDFBF7] px-2.5 py-1 text-xs font-medium text-[#985f6b] hover:bg-[#F9EFF1] transition-colors cursor-pointer"
-          title="Виставити актуальну дата на сьогодні"
+          title={dict.form.todayTooltip}
         >
           <span>📅</span>
           <span>{formattedToday}</span>

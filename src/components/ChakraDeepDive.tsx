@@ -50,7 +50,7 @@ export default function ChakraDeepDive({
               <span className="font-heading text-base font-bold sm:text-lg">{row.name}</span>
             </summary>
             <div className="border-t border-border px-6 py-5 space-y-4">
-              <div className="space-y-3 text-sm text-ink-soft sm:text-base">
+              <div className="space-y-3 text-base text-ink-soft sm:text-lg">
                 {descriptions[row.id].split("\n\n").map((paragraph, i) => (
                   <p key={i}>{paragraph}</p>
                 ))}
@@ -60,7 +60,7 @@ export default function ChakraDeepDive({
                   {row.emotions} · {arcana.name}
                 </p>
                 {content ? (
-                  <div className="space-y-4 text-sm text-ink-soft sm:text-base">
+                  <div className="space-y-4 text-base text-ink-soft sm:text-lg">
                     {content.intro && <p>{content.intro}</p>}
                     {content.plus.length > 0 && (
                       <div>

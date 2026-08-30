@@ -36,7 +36,7 @@ export default function ProgramList({ items, comingSoonText, genericNameLabel }:
               {item.numbers} · {item.name ?? genericNameLabel}
             </p>
             {item.content ? (
-              <div className="space-y-3 text-sm text-ink-soft sm:text-base">
+              <div className="space-y-3 text-base text-ink-soft sm:text-lg">
                 {item.content.intro && <p>{item.content.intro}</p>}
                 <p>{item.content.plus}</p>
                 <p>{item.content.minus}</p>
