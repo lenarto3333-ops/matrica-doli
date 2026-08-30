@@ -44,7 +44,7 @@ body {
 }
 
 /* Bump the root font-size on mobile so text reads without pinch-zoom.
-   Tailwind's text-*/spacing utilities are rem-based, so this scales the
+   Tailwind's text and spacing utilities are rem-based, so this scales the
    whole site's type (and, intentionally, its rem-based spacing) together —
    fixed-px chrome (e.g. the header) is pinned separately to stay overflow-safe. */
 @media (max-width: 480px) {
