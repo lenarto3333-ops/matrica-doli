@@ -28,9 +28,9 @@ export default function AuthButton({ dict, locale }: AuthButtonProps) {
         <button
           type="button"
           onClick={() => setPanelOpen((v) => !v)}
-          className="flex items-center gap-1.5 sm:gap-2 rounded-full bg-plum pl-1.5 sm:pl-2 pr-2.5 sm:pr-4 py-1.5 text-xs font-bold uppercase tracking-wide text-cream hover:bg-plum-dark transition-colors max-w-[140px] sm:max-w-none"
+          className="flex items-center gap-[6px] sm:gap-2 rounded-full bg-plum pl-[6px] sm:pl-2 pr-[10px] sm:pr-4 py-[6px] sm:py-1.5 text-[12px] font-bold uppercase tracking-wide text-cream hover:bg-plum-dark transition-colors max-w-[96px] sm:max-w-none"
         >
-          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cream/20 text-sm">
+          <span className="flex h-[26px] w-[26px] sm:h-7 sm:w-7 shrink-0 items-center justify-center rounded-full bg-cream/20 text-[13px]">
             👤
           </span>
           <span className="truncate">{firstName}</span>
@@ -109,7 +109,7 @@ export default function AuthButton({ dict, locale }: AuthButtonProps) {
       <button
         type="button"
         onClick={() => setModalOpen(true)}
-        className="shrink-0 whitespace-nowrap rounded-xl border border-[#985f6b] px-3.5 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-[#2C2825] hover:bg-[#985f6b] hover:text-white transition-all cursor-pointer shadow-xs"
+        className="shrink-0 whitespace-nowrap rounded-xl border border-[#985f6b] px-[12px] sm:px-6 py-[6px] sm:py-2 text-[12px] sm:text-sm font-medium text-[#2C2825] hover:bg-[#985f6b] hover:text-white transition-all cursor-pointer shadow-xs"
       >
         {dict.auth.login}
       </button>

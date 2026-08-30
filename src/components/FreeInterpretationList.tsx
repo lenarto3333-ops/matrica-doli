@@ -109,7 +109,7 @@ export default function FreeInterpretationList({ items }: FreeInterpretationList
           key={item.title}
           className="group overflow-hidden rounded-2xl border border-border bg-card"
         >
-          <summary className="flex cursor-pointer list-none items-center gap-4 px-6 py-5 font-heading text-base font-bold marker:content-none sm:text-lg">
+          <summary className="flex cursor-pointer list-none items-center gap-4 px-6 py-5 font-heading text-lg font-bold marker:content-none sm:text-xl">
             <span
               aria-hidden="true"
               className="text-plum transition-transform duration-200 group-open:rotate-180"

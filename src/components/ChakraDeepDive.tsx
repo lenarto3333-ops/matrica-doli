@@ -47,7 +47,7 @@ export default function ChakraDeepDive({
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-plum-soft">
                 <ChakraIcon chakraId={row.id} className="h-7 w-7" />
               </span>
-              <span className="font-heading text-base font-bold sm:text-lg">{row.name}</span>
+              <span className="font-heading text-lg font-bold sm:text-xl">{row.name}</span>
             </summary>
             <div className="border-t border-border px-6 py-5 space-y-4">
               <div className="space-y-3 text-base text-ink-soft sm:text-lg">

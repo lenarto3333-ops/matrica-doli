@@ -19,7 +19,7 @@ function LangSwitcherInner({ locale }: LangSwitcherProps) {
   const restOfPath = pathname.split("/").slice(2).join("/");
 
   return (
-    <div className="flex items-center gap-1 text-xs font-bold">
+    <div className="flex items-center gap-[4px] text-[12px] font-bold">
       {locales.map((loc, i) => {
         const href = `/${loc}${restOfPath ? `/${restOfPath}` : ""}${query ? `?${query}` : ""}`;
         return (
@@ -30,7 +30,7 @@ function LangSwitcherInner({ locale }: LangSwitcherProps) {
             >
               {LABELS[loc]}
             </Link>
-            {i < locales.length - 1 && <span className="mx-1 text-border">/</span>}
+            {i < locales.length - 1 && <span className="mx-[3px] text-border">/</span>}
           </span>
         );
       })}
@@ -42,13 +42,13 @@ export default function LangSwitcher(props: LangSwitcherProps) {
   return (
     <Suspense
       fallback={
-        <div className="flex items-center gap-1 text-xs font-bold">
+        <div className="flex items-center gap-[4px] text-[12px] font-bold">
           {locales.map((loc, i) => (
             <span key={loc} className="flex items-center">
               <span className={loc === props.locale ? "text-plum" : "text-ink-soft"}>
                 {LABELS[loc]}
               </span>
-              {i < locales.length - 1 && <span className="mx-1 text-border">/</span>}
+              {i < locales.length - 1 && <span className="mx-[3px] text-border">/</span>}
             </span>
           ))}
         </div>
