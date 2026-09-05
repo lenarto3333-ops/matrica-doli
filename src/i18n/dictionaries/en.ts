@@ -347,6 +347,11 @@ const en: Dictionary = {
         { key: "energy-field", title: "What drains your energy the most — and how to get it back" },
       ],
     },
+    talentSupport: {
+      heading: "Supporting energies of your talent",
+      point1: "This energy governs intellect, your way of thinking, and your outlook on the world.",
+      point2: "This energy governs communication, self-expression, and how you show up in the world.",
+    },
     paywall: {
       title: "You've read only 25% of the analysis",
       subtitle: "The full version includes:",

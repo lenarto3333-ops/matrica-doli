@@ -192,10 +192,21 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
                   ? (PARENTS_CHILDREN_POSITION_MODULES[i] ?? item.key)
                   : item.key;
               const interpretation = getInterpretation(module, energy, locale);
+              let body = interpretation?.body ?? "";
+              // The two "supporting" points directly below the main talent
+              // on the month axis (matrix.monthAxis[0]/[1]) have a fixed,
+              // generic meaning independent of which arcana lands there —
+              // confirmed against the avatarium.life reference for
+              // 24.09.1973 (monthAxis [7, 16, 5]: 7 and 16 are the two
+              // supporting points shown here; 5/monthAxis[2] is visually a
+              // separate cluster on that reference and isn't included).
+              if (item.key === "talents" && body) {
+                body += `\n\n## ${r.talentSupport.heading}\n\n**${matrix.monthAxis[0]}** — ${r.talentSupport.point1}\n\n**${matrix.monthAxis[1]}** — ${r.talentSupport.point2}`;
+              }
               return {
                 energy,
                 arcanaName: arcana.name,
-                body: interpretation?.body ?? "",
+                body,
               };
             })
             .filter((point) => point.body);

@@ -255,6 +255,11 @@ export interface Dictionary {
       freeComfortTitle: string;
       items: { key: string; title: string }[];
     };
+    talentSupport: {
+      heading: string;
+      point1: string;
+      point2: string;
+    };
     paywall: {
       title: string;
       subtitle: string;
