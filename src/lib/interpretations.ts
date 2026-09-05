@@ -22,7 +22,12 @@ const CONTENT_ROOT = path.join(process.cwd(), "src", "content", "interpretations
 
 /** Removes the leading "# N. Name — Subtitle" heading line, if present. */
 function stripTitleHeading(markdown: string): string {
-  return markdown.replace(/^#\s.*\n+/, "");
+  // `\s*` absorbs the blank line gray-matter's `content` leaves between the
+  // frontmatter's closing "---" and the H1 — without it, `^#` never matches
+  // (content starts with "\n#...", not "#..."), so the heading silently
+  // never got stripped and rendered as a redundant duplicate <h1> on every
+  // content block site-wide.
+  return markdown.replace(/^\s*#\s.*\n+/, "");
 }
 
 /**

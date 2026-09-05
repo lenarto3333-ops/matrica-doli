@@ -348,9 +348,8 @@ const en: Dictionary = {
       ],
     },
     talentSupport: {
-      heading: "Supporting energies of your talent",
-      point1: "This energy governs intellect, your way of thinking, and your outlook on the world.",
-      point2: "This energy governs communication, self-expression, and how you show up in the world.",
+      intellectLabel: "My Intellect",
+      expressionLabel: "Self-Expression",
     },
     paywall: {
       title: "You've read only 25% of the analysis",

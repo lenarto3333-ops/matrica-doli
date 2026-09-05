@@ -175,6 +175,45 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
               };
             }
           }
+          // `talents` gets 2 extra stacked points beyond the main arcana:
+          // the two "supporting" points directly below it on the month axis
+          // (matrix.monthAxis[0]/[1]). Confirmed against the avatarium.life
+          // reference for 24.09.1973 (monthAxis [7, 16, 5]: 7 and 16 are the
+          // two supporting points shown there, each with its own named-arcana
+          // card; 5/monthAxis[2] is visually a separate cluster on that
+          // reference and isn't included). Each gets its own short, dedicated
+          // per-arcana module (talent-intellect/talent-expression) rather
+          // than reusing the main talents/NN.md content, since the content
+          // owner wanted genuinely new text for these two positions, not a
+          // generic one-liner or a copy of the main talent's write-up.
+          if (item.key === "talents") {
+            const mainArcana = getArcana(energies[0], locale);
+            const mainInterp = getInterpretation("talents", energies[0], locale);
+            const supportSpecs = [
+              { energy: matrix.monthAxis[0], module: "talent-intellect", label: r.talentSupport.intellectLabel },
+              { energy: matrix.monthAxis[1], module: "talent-expression", label: r.talentSupport.expressionLabel },
+            ];
+            const supportPoints = supportSpecs
+              .map((s) => {
+                const interp = getInterpretation(s.module, s.energy, locale);
+                if (!interp?.body) return null;
+                return {
+                  energy: s.energy,
+                  arcanaName: getArcana(s.energy, locale).name,
+                  body: `**${s.label}**\n\n${interp.body}`,
+                };
+              })
+              .filter((p): p is { energy: number; arcanaName: string; body: string } => p !== null);
+            const points = [
+              ...(mainInterp?.body
+                ? [{ energy: energies[0], arcanaName: mainArcana.name, body: mainInterp.body }]
+                : []),
+              ...supportPoints,
+            ];
+            if (points.length > 0) {
+              return { key: item.key, title: item.title, points };
+            }
+          }
           // parents-children without an authored named program still shows
           // 3 differentiated points, not the same generic text 3 times: each
           // position has its own role-specific module (see
@@ -192,21 +231,10 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
                   ? (PARENTS_CHILDREN_POSITION_MODULES[i] ?? item.key)
                   : item.key;
               const interpretation = getInterpretation(module, energy, locale);
-              let body = interpretation?.body ?? "";
-              // The two "supporting" points directly below the main talent
-              // on the month axis (matrix.monthAxis[0]/[1]) have a fixed,
-              // generic meaning independent of which arcana lands there —
-              // confirmed against the avatarium.life reference for
-              // 24.09.1973 (monthAxis [7, 16, 5]: 7 and 16 are the two
-              // supporting points shown here; 5/monthAxis[2] is visually a
-              // separate cluster on that reference and isn't included).
-              if (item.key === "talents" && body) {
-                body += `\n\n## ${r.talentSupport.heading}\n\n**${matrix.monthAxis[0]}** — ${r.talentSupport.point1}\n\n**${matrix.monthAxis[1]}** — ${r.talentSupport.point2}`;
-              }
               return {
                 energy,
                 arcanaName: arcana.name,
-                body,
+                body: interpretation?.body ?? "",
               };
             })
             .filter((point) => point.body);

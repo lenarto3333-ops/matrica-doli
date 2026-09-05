@@ -256,9 +256,8 @@ export interface Dictionary {
       items: { key: string; title: string }[];
     };
     talentSupport: {
-      heading: string;
-      point1: string;
-      point2: string;
+      intellectLabel: string;
+      expressionLabel: string;
     };
     paywall: {
       title: string;
