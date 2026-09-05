@@ -29,7 +29,7 @@ export default function UniquePersonSection({ dict }: Props) {
         <div className="flex justify-center">
           <div className="relative aspect-[2/3] w-64 overflow-hidden rounded-[2rem] border border-[#E8D8CD] bg-[#F5E8DE] shadow-[0_24px_70px_rgba(152,95,107,0.16)] sm:w-80">
             <Image
-              src="/lunar-energy-inner-silence.jfif"
+              src="/lunar-energy-inner-silence.jpg"
               alt=""
               fill
               sizes="(min-width: 640px) 320px, 256px"
