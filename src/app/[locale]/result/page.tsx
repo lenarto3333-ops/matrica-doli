@@ -10,6 +10,7 @@ import ProgramList from "@/components/ProgramList";
 import AgePeriodsTable from "@/components/AgePeriodsTable";
 import PricingCards from "@/components/PricingCards";
 import EsotericPageDecor from "@/components/EsotericPageDecor";
+import MysticIllustration from "@/components/MysticIllustration";
 import {
   calculateMatrix,
   calculateChakraTable,
@@ -331,6 +332,7 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
         <EsotericPageDecor />
         <section className="mx-auto max-w-7xl px-6 pt-14 pb-8 grid lg:grid-cols-[1fr_1.1fr] gap-10 items-center">
           <div>
+            <MysticIllustration className="hidden lg:block h-64 w-auto mb-8 text-plum/25" />
             <p className="text-xs tracking-[0.25em] uppercase text-plum font-bold mb-4">
               {dateLabel}
             </p>
