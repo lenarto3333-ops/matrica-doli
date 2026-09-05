@@ -18,14 +18,20 @@ export default function Header({ dict, locale }: HeaderProps) {
       <div className="mx-auto max-w-[1240px] flex items-center justify-between px-[14px] sm:px-6 py-[10px] sm:py-4 gap-[6px] sm:gap-4">
         {/* Brand / Logo */}
         <Link href={`/${locale}`} className="flex items-center shrink-0 min-w-0 group">
-          <Image
-            src="/logo.png"
-            alt="Матриця Долі"
-            width={2075}
-            height={636}
-            priority
-            className="h-[30px] sm:h-11 w-auto transition-opacity group-hover:opacity-80"
-          />
+          {locale === "uk" ? (
+            <Image
+              src="/logo.png"
+              alt={dict.footer.brand}
+              width={2075}
+              height={636}
+              priority
+              className="h-[30px] sm:h-11 w-auto transition-opacity group-hover:opacity-80"
+            />
+          ) : (
+            <span className="font-heading font-bold uppercase tracking-[0.06em] text-plum text-[15px] sm:text-[26px] leading-none whitespace-nowrap transition-colors group-hover:text-plum-dark">
+              {dict.footer.brand}
+            </span>
+          )}
         </Link>
 
         {/* Navigation Links */}
