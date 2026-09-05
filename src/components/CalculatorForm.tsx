@@ -62,14 +62,14 @@ export default function CalculatorForm({ dict, locale, className = "" }: Calcula
 
   return (
     <div className={`rounded-2xl sm:rounded-[28px] bg-white border border-[#EEE6D9] shadow-xl shadow-[#985f6b]/10 p-7 sm:p-9 text-left ${className}`}>
-      <div className="flex items-center justify-between gap-2 mb-6">
+      <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-2 mb-6">
         <h2 className="font-sans font-bold text-xl text-[#2C2825]">
           {dict.form.heading}
         </h2>
         <button
           type="button"
           onClick={setToToday}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-[#EEE6D9] bg-[#FDFBF7] px-2.5 py-1 text-xs font-medium text-[#985f6b] hover:bg-[#F9EFF1] transition-colors cursor-pointer"
+          className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-[#EEE6D9] bg-[#FDFBF7] px-2.5 py-1 text-xs font-medium text-[#985f6b] hover:bg-[#F9EFF1] transition-colors cursor-pointer"
           title={dict.form.todayTooltip}
         >
           <span>📅</span>
@@ -78,13 +78,13 @@ export default function CalculatorForm({ dict, locale, className = "" }: Calcula
       </div>
 
       <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-3 gap-3 mb-6">
-          <label className="flex flex-col gap-2 text-xs font-medium text-[#635E59]">
+        <div className="grid grid-cols-[1fr_1fr_1.35fr] sm:grid-cols-3 gap-2 sm:gap-3 mb-6">
+          <label className="flex min-w-0 flex-col gap-2 text-xs font-medium text-[#635E59]">
             <span>{dict.form.day}</span>
             <select
               value={day}
               onChange={(e) => setDay(Number(e.target.value))}
-              className="w-full rounded-xl border border-[#EEE6D9] bg-[#FDFBF7] px-3 py-3 text-[#2C2825] font-medium text-base focus:outline-none focus:ring-2 focus:ring-[#985f6b]/40 cursor-pointer"
+              className="w-full min-w-0 rounded-xl border border-[#EEE6D9] bg-[#FDFBF7] px-2 sm:px-3 py-3 text-[#2C2825] font-medium text-sm sm:text-base tabular-nums focus:outline-none focus:ring-2 focus:ring-[#985f6b]/40 cursor-pointer"
             >
               {DAYS.map((d) => (
                 <option key={d} value={d}>
@@ -94,12 +94,12 @@ export default function CalculatorForm({ dict, locale, className = "" }: Calcula
             </select>
           </label>
 
-          <label className="flex flex-col gap-2 text-xs font-medium text-[#635E59]">
+          <label className="flex min-w-0 flex-col gap-2 text-xs font-medium text-[#635E59]">
             <span>{dict.form.month}</span>
             <select
               value={month}
               onChange={(e) => setMonth(Number(e.target.value))}
-              className="w-full rounded-xl border border-[#EEE6D9] bg-[#FDFBF7] px-3 py-3 text-[#2C2825] font-medium text-base focus:outline-none focus:ring-2 focus:ring-[#985f6b]/40 cursor-pointer"
+              className="w-full min-w-0 rounded-xl border border-[#EEE6D9] bg-[#FDFBF7] px-2 sm:px-3 py-3 text-[#2C2825] font-medium text-sm sm:text-base tabular-nums focus:outline-none focus:ring-2 focus:ring-[#985f6b]/40 cursor-pointer"
             >
               {MONTHS.map((m) => (
                 <option key={m} value={m}>
@@ -109,12 +109,12 @@ export default function CalculatorForm({ dict, locale, className = "" }: Calcula
             </select>
           </label>
 
-          <label className="flex flex-col gap-2 text-xs font-medium text-[#635E59]">
+          <label className="flex min-w-0 flex-col gap-2 text-xs font-medium text-[#635E59]">
             <span>{dict.form.year}</span>
             <select
               value={year}
               onChange={(e) => setYear(Number(e.target.value))}
-              className="w-full rounded-xl border border-[#EEE6D9] bg-[#FDFBF7] px-3 py-3 text-[#2C2825] font-medium text-base focus:outline-none focus:ring-2 focus:ring-[#985f6b]/40 cursor-pointer"
+              className="w-full min-w-0 rounded-xl border border-[#EEE6D9] bg-[#FDFBF7] px-2 sm:px-3 py-3 text-[#2C2825] font-medium text-sm sm:text-base tabular-nums focus:outline-none focus:ring-2 focus:ring-[#985f6b]/40 cursor-pointer"
             >
               {YEARS.map((y) => (
                 <option key={y} value={y}>
