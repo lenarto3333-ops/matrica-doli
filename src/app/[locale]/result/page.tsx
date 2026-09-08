@@ -10,7 +10,6 @@ import ProgramList from "@/components/ProgramList";
 import AgePeriodsTable from "@/components/AgePeriodsTable";
 import PricingCards from "@/components/PricingCards";
 import EsotericPageDecor from "@/components/EsotericPageDecor";
-import MysticIllustration from "@/components/MysticIllustration";
 import {
   calculateMatrix,
   calculateChakraTable,
@@ -81,6 +80,8 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
   const chakraTable = calculateChakraTable(matrix, locale);
   const characterArcana = getArcana(matrix.day, locale);
   const comfortArcana = getArcana(matrix.center, locale);
+  const higherSelfArcana = getArcana(matrix.month, locale);
+  const karmaArcana = getArcana(matrix.karma, locale);
   const r = dict.result;
 
   // TEMPORARY: every module with a resolved matrix-point mapping (10 core +
@@ -330,18 +331,35 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
       <Header dict={dict} locale={locale} />
       <main className="relative isolate overflow-hidden">
         <EsotericPageDecor />
-        <section className="mx-auto max-w-7xl px-6 pt-14 pb-8 grid lg:grid-cols-[1fr_1.1fr] gap-10 items-center">
-          <div>
-            <MysticIllustration className="hidden lg:block h-64 w-auto mb-8 text-plum/25" />
+        <section className="mx-auto grid max-w-7xl items-start gap-10 px-6 pb-8 pt-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12 lg:pt-14">
+          <div className="relative lg:pt-8">
             <p className="text-xs tracking-[0.25em] uppercase text-plum font-bold mb-4">
               {dateLabel}
             </p>
             <h1 className="font-heading font-extrabold uppercase text-3xl sm:text-4xl leading-tight mb-4">
               {r.title}
             </h1>
-            <p className="text-ink-soft text-xl leading-relaxed">{r.subtitle}</p>
+            <p className="max-w-xl text-lg leading-relaxed text-ink-soft sm:text-xl">{r.subtitle}</p>
+
+            <div className="mt-8 hidden grid-cols-2 gap-4 lg:grid">
+              {[
+                { label: r.summary.personality, energy: matrix.day, name: characterArcana.name },
+                { label: r.summary.higherSelf, energy: matrix.month, name: higherSelfArcana.name },
+                { label: r.summary.comfort, energy: matrix.center, name: comfortArcana.name },
+                { label: r.summary.karma, energy: matrix.karma, name: karmaArcana.name },
+              ].map((item) => (
+                <div key={item.label} className="rounded-2xl border border-border bg-card p-4">
+                  <p className="mb-1 text-xs font-medium uppercase tracking-wide text-ink-soft">
+                    {item.label}
+                  </p>
+                  <p className="font-heading font-bold text-lg text-ink">
+                    {item.energy} · {item.name}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="relative aspect-[1/1.4] max-w-2xl mx-auto w-full">
+          <div className="relative mx-auto aspect-[1/1.4] w-full max-w-2xl">
             <MatrixDiagram
               values={{
                 day: matrix.day,
