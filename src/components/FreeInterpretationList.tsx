@@ -8,6 +8,7 @@ interface InterpretationPoint {
 }
 
 interface FreeInterpretationItem {
+  id?: string;
   title: string;
   points: InterpretationPoint[];
 }
@@ -107,7 +108,8 @@ export default function FreeInterpretationList({ items }: FreeInterpretationList
       {items.map((item) => (
         <details
           key={item.title}
-          className="group overflow-hidden rounded-2xl border border-border bg-card"
+          id={item.id}
+          className="group overflow-hidden rounded-2xl border border-border bg-card scroll-mt-24"
         >
           <summary className="flex cursor-pointer list-none items-center gap-4 px-6 py-5 font-heading text-lg font-bold marker:content-none sm:text-xl">
             <span

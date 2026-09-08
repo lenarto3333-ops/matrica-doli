@@ -343,19 +343,23 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
 
             <div className="mt-8 hidden grid-cols-2 gap-4 lg:grid">
               {[
-                { label: r.summary.personality, energy: matrix.day, name: characterArcana.name },
-                { label: r.summary.higherSelf, energy: matrix.month, name: higherSelfArcana.name },
-                { label: r.summary.comfort, energy: matrix.center, name: comfortArcana.name },
-                { label: r.summary.karma, energy: matrix.karma, name: karmaArcana.name },
+                { label: r.summary.personality, energy: matrix.day, name: characterArcana.name, anchor: "character" },
+                { label: r.summary.higherSelf, energy: matrix.month, name: higherSelfArcana.name, anchor: "talents" },
+                { label: r.summary.comfort, energy: matrix.center, name: comfortArcana.name, anchor: "inner-comfort" },
+                { label: r.summary.karma, energy: matrix.karma, name: karmaArcana.name, anchor: "soul-lessons" },
               ].map((item) => (
-                <div key={item.label} className="rounded-2xl border border-border bg-card p-4">
+                <a
+                  key={item.label}
+                  href={`#${item.anchor}`}
+                  className="rounded-2xl border border-border bg-card p-4 transition-colors hover:border-plum/50 hover:bg-plum-soft/40"
+                >
                   <p className="mb-1 text-xs font-medium uppercase tracking-wide text-ink-soft">
                     {item.label}
                   </p>
                   <p className="font-heading font-bold text-lg text-ink">
                     {item.energy} · {item.name}
                   </p>
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -393,6 +397,7 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
           <FreeInterpretationList
             items={[
               {
+                id: "character",
                 title: r.unlockList.freeCharacterTitle,
                 points: [
                   {
@@ -403,6 +408,7 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
                 ],
               },
               {
+                id: "inner-comfort",
                 title: r.unlockList.freeComfortTitle,
                 points: [
                   {
@@ -412,7 +418,7 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
                   },
                 ],
               },
-              ...earlyUnlockedItems,
+              ...earlyUnlockedItems.map((it) => ({ ...it, id: it.key })),
             ]}
           />
         </section>
