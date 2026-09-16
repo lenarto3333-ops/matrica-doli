@@ -20,8 +20,12 @@
  * triples (see the comment above that const for scrape/reconciliation
  * details, and docs/rod-programs-catalog.md for the full raw data), plus
  * originally-authored entries for real corner/axis combinations the site's
- * scrape didn't cover (e.g. "7-12-19" — confirmed absent from
- * gadalkindom.ru directly, added 2026-09-16). Named
+ * scrape didn't cover (e.g. "7-12-19" and "7-19-12" — both confirmed
+ * absent from gadalkindom.ru directly, added 2026-09-16; note "7-19-12"
+ * coincidentally matches a KARMIC_TAIL_PROGRAM_NAMES key ("Військовий")
+ * but was given its own distinct родова name, same collision pattern
+ * documented on that const — родові and кармічний хвіст are unrelated
+ * catalogs that can share a 3-number key by chance). Named
  * plus/minus content is a separate, still-incremental task — populating it
  * is the same kind of ongoing work as filling the interpretation library.
  * A combination with no catalog entry falls back to a generic "Родова
@@ -177,6 +181,7 @@ export const ANCESTRAL_PROGRAM_NAMES: Record<string, string> = {
   "7-16-9": "Мовчання",
   "7-17-10": "Шлях до відомості",
   "7-18-11": "Бойовий маг",
+  "7-19-12": "Спадкове сяяння",
   "7-20-13": "Шлях переродження",
   "7-21-14": "Знущання і тортури",
   "7-22-15": "Азарт, ризик, адреналін",
