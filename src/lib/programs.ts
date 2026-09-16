@@ -16,9 +16,12 @@
  * ascending sort, which was tried first and found to be wrong (see
  * docs/rod-programs-catalog.md).
  *
- * ANCESTRAL_PROGRAM_NAMES holds 167 of gadalkindom.ru's distinct родові
+ * ANCESTRAL_PROGRAM_NAMES holds 145 of gadalkindom.ru's distinct родові
  * triples (see the comment above that const for scrape/reconciliation
- * details, and docs/rod-programs-catalog.md for the full raw data). Named
+ * details, and docs/rod-programs-catalog.md for the full raw data), plus
+ * originally-authored entries for real corner/axis combinations the site's
+ * scrape didn't cover (e.g. "7-12-19" — confirmed absent from
+ * gadalkindom.ru directly, added 2026-09-16). Named
  * plus/minus content is a separate, still-incremental task — populating it
  * is the same kind of ongoing work as filling the interpretation library.
  * A combination with no catalog entry falls back to a generic "Родова
@@ -170,6 +173,7 @@ export const ANCESTRAL_PROGRAM_NAMES: Record<string, string> = {
   "7-8-19": "Шлях до самореалізації",
   "7-9-20": "Ніхто не забере",
   "7-11-22": "Від наївності до сили",
+  "7-12-19": "Пауза перед тріумфом",
   "7-16-9": "Мовчання",
   "7-17-10": "Шлях до відомості",
   "7-18-11": "Бойовий маг",
