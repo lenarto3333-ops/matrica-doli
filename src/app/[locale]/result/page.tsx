@@ -396,7 +396,7 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
             />
           </div>
           <div
-            className="relative h-64 w-full max-w-md justify-self-center lg:absolute lg:bottom-0 lg:left-6"
+            className="relative h-64 w-full max-w-md justify-self-center lg:absolute lg:-bottom-6 lg:left-6"
             aria-hidden="true"
           >
             <Image
