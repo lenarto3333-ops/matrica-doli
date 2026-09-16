@@ -334,7 +334,7 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
       <Header dict={dict} locale={locale} />
       <main className="relative isolate overflow-hidden">
         <EsotericPageDecor />
-        <section className="mx-auto grid max-w-7xl items-start gap-10 px-6 pb-8 pt-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12 lg:pt-14">
+        <section className="relative mx-auto grid max-w-7xl items-start gap-10 px-6 pb-8 pt-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12 lg:pt-14">
           <div className="relative lg:pt-8">
             <p className="text-xs tracking-[0.25em] uppercase text-plum font-bold mb-4">
               {dateLabel}
@@ -395,13 +395,10 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
               }}
             />
           </div>
-        </section>
-
-        <section
-          className="mx-auto flex h-64 max-w-7xl items-center justify-center px-6 lg:-mt-64 lg:justify-start"
-          aria-hidden="true"
-        >
-          <div className="relative h-full w-full max-w-md">
+          <div
+            className="relative h-64 w-full max-w-md justify-self-center lg:absolute lg:bottom-0 lg:left-6"
+            aria-hidden="true"
+          >
             <Image
               src="/matrix-lotus-gold.png"
               alt=""
