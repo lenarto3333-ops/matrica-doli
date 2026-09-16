@@ -400,7 +400,7 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
             aria-hidden="true"
           >
             <Image
-              src="/matrix-lotus-gold.png"
+              src="/matrix-lotus-gold-transparent.png"
               alt=""
               fill
               priority
