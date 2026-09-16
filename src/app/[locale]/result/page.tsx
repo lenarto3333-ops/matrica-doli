@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MatrixDiagram from "@/components/MatrixDiagram";
@@ -392,6 +393,19 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
                 destinations: matrix.destinations,
                 channels: matrix.channels,
               }}
+            />
+          </div>
+        </section>
+
+        <section className="mx-auto flex h-80 max-w-7xl items-center justify-center px-6" aria-hidden="true">
+          <div className="relative h-full w-full max-w-2xl">
+            <Image
+              src="/matrix-lotus-gold.png"
+              alt=""
+              fill
+              priority
+              sizes="(min-width: 640px) 672px, 100vw"
+              className="object-contain object-center"
             />
           </div>
         </section>
