@@ -397,8 +397,11 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
           </div>
         </section>
 
-        <section className="mx-auto flex h-80 max-w-7xl items-center justify-center px-6" aria-hidden="true">
-          <div className="relative h-full w-full max-w-2xl">
+        <section
+          className="mx-auto flex h-80 max-w-7xl items-center justify-center px-6 lg:-mt-52 lg:justify-start"
+          aria-hidden="true"
+        >
+          <div className="relative h-full w-full max-w-lg">
             <Image
               src="/matrix-lotus-gold.png"
               alt=""
