@@ -398,7 +398,7 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
         </section>
 
         <section
-          className="mx-auto flex h-64 max-w-7xl items-center justify-center px-6 lg:-mt-52 lg:justify-start"
+          className="mx-auto flex h-64 max-w-7xl items-center justify-center px-6 lg:-mt-64 lg:justify-start"
           aria-hidden="true"
         >
           <div className="relative h-full w-full max-w-md">
@@ -414,7 +414,7 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
         </section>
 
         {/* Blocks 1, 2, 5, 6, 6b, 8, 8b, 9, 10, 12 + ancestry-legacy */}
-        <section className="mx-auto max-w-4xl px-6 py-10">
+        <section className="mx-auto max-w-4xl px-6 pb-10 pt-4 lg:pt-2">
           <FreeInterpretationList
             items={[
               {
