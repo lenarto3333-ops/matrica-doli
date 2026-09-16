@@ -82,6 +82,8 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
   const comfortArcana = getArcana(matrix.center, locale);
   const higherSelfArcana = getArcana(matrix.month, locale);
   const karmaArcana = getArcana(matrix.karma, locale);
+  const loveEntranceArcana = getArcana(matrix.channels.love.entrance, locale);
+  const moneyEntranceArcana = getArcana(matrix.channels.money.entrance, locale);
   const r = dict.result;
 
   // TEMPORARY: every module with a resolved matrix-point mapping (10 core +
@@ -347,6 +349,8 @@ export default async function ResultPage({ params, searchParams }: ResultPagePro
                 { label: r.summary.higherSelf, energy: matrix.month, name: higherSelfArcana.name, anchor: "talents" },
                 { label: r.summary.comfort, energy: matrix.center, name: comfortArcana.name, anchor: "inner-comfort" },
                 { label: r.summary.karma, energy: matrix.karma, name: karmaArcana.name, anchor: "soul-lessons" },
+                { label: r.channels.love, energy: matrix.channels.love.entrance, name: loveEntranceArcana.name, anchor: "relationships" },
+                { label: r.channels.money, energy: matrix.channels.money.entrance, name: moneyEntranceArcana.name, anchor: "money" },
               ].map((item) => (
                 <a
                   key={item.label}
